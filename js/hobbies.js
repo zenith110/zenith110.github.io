@@ -1,7 +1,6 @@
-function getHobbies(){
-    var jsonFile;
-    fetch("https://zenith110.github.io/js/hobbies.json")
-        .then(res => res.json())
-        .then(data => jsonFile = JSON.parse(data))
-    console.log(jsonFile);
+
+async function getHobbies(){
+    var local = window.location.pathname;
+    var dir = local.substring(0, local.lastIndexOf("/"))
+    console.log(dir)
 }
