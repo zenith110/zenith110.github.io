@@ -21,8 +21,19 @@
         <h1>Projects</h1>
         <ul id = "projects"></ul>
     </div>
-<script>xatu = projectStats("Xatu_Bot");
-console.log(xatu)</script>
+    <div hobbies>
+        <p>My hobbies include the following:</p>
+        <ul id = "hobbies"></ul>
+    </div>
+<script>
+    xatu = projectStats("Xatu_Bot", "None", 
+    "Developed in house discord bot using go, and developed small tools to assist with development. Used docker for deployment alongside github actions for ci/cd.", 
+    "Discord bot that aids in the education of the FE book club to prepare for the UCF FE exam.",
+    "DiscordGo, Docker, Github Actions for CI/CD", "Hiatus", "None");
+    pubsub = projectStats("pubsub_api", "AWS", "Developed an api that allows the notification of when pubsubs are on sale, will send text and email notifications when on sale.",
+    "API that faccilates the spread of information regard Publix subs.",
+    "Flask, Docker, AWS, React, PostgreSQL", "Present", "https://pubsub-api.dev")
+    </script>
 <!-- <script>projectStats("pubsub_api");</script> -->
 </body>
 </html>
