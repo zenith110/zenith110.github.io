@@ -10,7 +10,9 @@
     text-decoration: none;
     font-size: 17px;
 }
-
+body {
+    text-align: center;
+}
 .footer{
     background-color:cornflowerblue;
     overflow: hidden;
@@ -23,4 +25,16 @@
     text-decoration: none;
     font-size: 17px;
     display: inline-block;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+.content {
+    padding: 16px;
+}
+.sticky + .content {
+    padding-top: 60px;
 }
