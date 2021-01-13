@@ -12,6 +12,7 @@ class Project {
     this.technology = "";
     this.status = "";
     this.deployedLink = "";
+    this.name = "";
   }
 }
 /*
@@ -25,10 +26,12 @@ Given an element and text, create a node and return that node to be appended
 */
 function buttonCreator(link, text){
   var button = document.createElement("button");
+  button.className = "mui-btn mui-btn--primary";
   if(link != "None"){
     var linkText = document.createElement("a");
     linkText.setAttribute("href", link);
     linkText.textContent = text;
+    linkText.style.color = "black";
     button.style.opacity = "1";
     button.appendChild(linkText);
   }else{
@@ -59,7 +62,7 @@ function nodeCreator(element){
 /*
 Given a project name, fetch the data from the github api
 */
-function projectStats(projectName, cloudTech, responsibilities, description, technology, status, websiteURL) {
+function projectStats(projectName, cloudTech, responsibilities, description, technology, status, websiteURL, name) {
   projects = document.getElementById("projects");
   projectData = new Project();
   fetch("https://api.github.com/repos/zenith110/" + projectName)
@@ -68,6 +71,7 @@ function projectStats(projectName, cloudTech, responsibilities, description, tec
       // This is a weird quirk of Fetch
       return response.json();
     }).then(function (data) {
+      projectData.name = name;
       var date = new Date(data.created_at);
       projectData.deployedLink = websiteURL;
       projectData.createdAt = date;
@@ -84,6 +88,7 @@ function projectStats(projectName, cloudTech, responsibilities, description, tec
       projectData.status = status;
       let li = nodeCreator("li");
       let img = nodeCreator("img");
+      let nameData = textCreator(projectData.name, "Project name: " + projectData.name);
       let descriptionData = textCreator(projectData.description, "Description: " + projectData.description);
       let responsibilitiesData = textCreator(projectData.responsibilities, "Responsibilites on the project:\n" + projectData.responsibilities);
       let githubButton = buttonCreator(projectData.url, "Github repo");
@@ -93,6 +98,7 @@ function projectStats(projectName, cloudTech, responsibilities, description, tec
       let statusData = textCreator(projectData.status, "Current status of this project: " + projectData.status);
       let websiteData = buttonCreator(projectData.deployedLink, "Website link");
       img.src = projectData.readme_picture;
+      listAppend(li, nameData);
       listAppend(li, img);
       listAppend(li, createdAtData);
       listAppend(li, technologyData);

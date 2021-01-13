@@ -1,51 +1,68 @@
 <html>
 <head>
 <title>Abrahan's Portfolio</title>
+<script src="http://cdn.muicss.com/mui-0.10.3/js/mui.min.js"></script>
+<link href="http://cdn.muicss.com/mui-0.10.3/css/mui.min.css" rel="stylesheet" type="text/css" />
+<link href="css/site.css" rel="stylesheet" type="text/css" />
 <script src="js/projectPull.js"></script>
-<script src="js/hobbies.js"></script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-<p>Welcome to my portfolio!</p>
-<p>How to get a hold of me:</p>
-    <div class = "contact">
-        <li>
-            Email
-        </li>
-        <li>
-            <a href = "https://www.linkedin.com/in/abrahan-nevarez/">LinkedIn</a>
-        </li>
-        <li>
-            <a href = "https://www.github.com/zenith110">Github</a>
-            </li>    
-    </div>
-    <div class projects>
-        <h1>Projects</h1>
+<div class ="nav-bar">
+    <a class="Projects" href="#Projects">Projects</a>
+    <a class="Hobby" href="#Hobbies">Hobbies</a>
+    <a class="Clubs" href="#Clubs">Clubs</a>
+</div>
+    <div class ="projects-style">
+        <h1 id = "Projects">Projects</h1>
         <ul id = "projects"></ul>
     </div>
-    <div hobbies>
-        <h1>Hobbies</h1>
+    <div classes ="hobbies">
+        <h1 id = "Hobbies">Hobbies</h1>
         <p>My hobbies include the following:</p>
+        <ul>
         <li>Reading</li>
         <li>Playing trombone, guitar, and bass</li>
         <li>Composing music</li>
         <li>Breaking things and putting them back together</li>
-        <li>Traveling with family</li>
+        <li>Traveling with family</li></ul>
     </div>
-    <div extracurriculars>
-        <h1>Clubs I've been a part of</h1>
-        <p>KnightHacks</p>
-        <li>Directory of Development, Nov 2020 - Present</li>
-        <li>Member, 2017 - Present</li>
+    <div class = "clubs">
+        <h1 id = "Clubs">Clubs I've been a part of</h1>
+        <ul>
+            <div class = "knighthacks">
+                <img src="img/knighthacks.png"/>
+                <p>KnightHacks</p>
+                <p>Directory of Development, Nov 2020 - Present</p>
+                <li>Implemented containerization to ease development between various microservices</li>
+                <p>Member, 2017 - Present</p>
+            </div>
+            <div class = "marchingknights">
+                <img src="img/marchingknights.jpg"/>
+                <p>Marching Knights</p>
+                <p>Trombonist, 2017 - 2019</p>
+                <li>Went to both the Peach bowl against Auburn, and Fiesta bowl against LSU</li>
+                <li>Got to make life long connections with fellow bandmates</li>
+                <li>Got to see the peach drop on new years</li>
+            </div></ul>
     </div>
 <script>
     xatu = projectStats("Xatu_Bot", "None", 
     "Developed in house discord bot using go, and developed small tools to assist with development. Used docker for deployment alongside github actions for ci/cd.", 
     "Discord bot that aids in the education of the FE book club to prepare for the UCF FE exam.",
-    "DiscordGo, Docker, Github Actions for CI/CD", "Hiatus", "None");
+    "DiscordGo, Docker, Github Actions for CI/CD.", "Hiatus", "None", "Xatu");
     pubsub = projectStats("pubsub_api", "AWS", "Developed an api that allows the notification of when pubsubs are on sale, will send text and email notifications when on sale.",
     "API that faccilates the spread of information regard Publix subs.",
-    "Flask, Docker, AWS, React, PostgreSQL", "Present", "https://pubsub-api.dev")
+    "Flask, Docker, AWS, React, PostgreSQL.", "Under development", "https://pubsub-api.dev", "Pubsub API")
     </script>
-<!-- <script>projectStats("pubsub_api");</script> -->
 </body>
+<footer>
+    <div class = "footer">
+        <a href="https://www.linkedin.com/in/abrahan-nevarez/" target = "_blank"><img src="img/LI-In-Bug.png"/></a>
+        <a href="ttps://www.github.com/zenith110" target =" _blank"><img src="img/GitHub-Mark-64px.png"/></a>
+        <a href="mailto:contact@abrahannevarez.dev" target = "_blank"><img src="img/Places-mail-message-icon.png"/></a>
+        <a href="https://github.com/zenith110/zenith110.github.io/blob/main/resume_abrahan_nevarez.pdf" target = "_blank"><img src="img/resume.png" height = 64px; width = 64px;/></a>
+    </div>
+</footer>
 </html>
