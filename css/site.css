@@ -1,0 +1,26 @@
+.nav-bar{
+    background-color: cornflowerblue;
+    overflow: hidden;
+}
+.nav-bar a{
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.footer{
+    background-color:cornflowerblue;
+    overflow: hidden;
+}
+
+.footer a{
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: inline-block;
+}
