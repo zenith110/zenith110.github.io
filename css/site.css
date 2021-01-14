@@ -12,6 +12,13 @@
 }
 body {
     text-align: center;
+    background:honeydew;
+}
+.projects-style{
+    text-align: center;
+}
+button {
+    text-align: center;
 }
 .footer{
     background-color:cornflowerblue;

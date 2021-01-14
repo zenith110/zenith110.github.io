@@ -22,21 +22,22 @@ function listAppend(parent, element){
   return parent.appendChild(element);
 }
 /*
-Given an element and text, create a node and return that node to be appended
+Given an element and text, create a button and return that button to be appended
 */
 function buttonCreator(link, text){
   var button = document.createElement("button");
-  button.className = "mui-btn mui-btn--primary";
+  button.className = "mui-btn mui-btn--raised mui-btn--primary";
   if(link != "None"){
     var linkText = document.createElement("a");
     linkText.setAttribute("href", link);
     linkText.textContent = text;
     linkText.style.color = "black";
-    button.style.opacity = "1";
     button.appendChild(linkText);
   }else{
     var link = document.createElement("a");
-    button.style.opacity = "0";
+    link.textContent = "Not deployed";
+    link.style.color = "black";
+    button.appendChild(link);
   }
   return button;
 }
@@ -49,6 +50,7 @@ function textCreator(attribute, text){
   var textData = document.createTextNode(text);
   textTag.appendChild(textData);
   textTag.style.opacity = "1";
+  textTag.style.textAlign = "center";
   }else{
     var textData = document.createTextNode(text);
     textTag.style.opacity = "0";
@@ -86,7 +88,7 @@ function projectStats(projectName, cloudTech, responsibilities, description, tec
       projectData.homepage = data.html_url;
       projectData.technology = technology;
       projectData.status = status;
-      let li = nodeCreator("li");
+      let li = nodeCreator("p");
       let img = nodeCreator("img");
       let nameData = textCreator(projectData.name, "Project name: " + projectData.name);
       let descriptionData = textCreator(projectData.description, "Description: " + projectData.description);
@@ -94,7 +96,7 @@ function projectStats(projectName, cloudTech, responsibilities, description, tec
       let githubButton = buttonCreator(projectData.url, "Github repo");
       let cloudTechData = textCreator(projectData.cloudTech, "Used the following cloud tech:\n" + projectData.cloudTech);
       let createdAtData = textCreator(projectData.createdAt, "Created on: " + projectData.createdAt.getMonth() + "/" + projectData.createdAt.getDate() + "/" + projectData.createdAt.getFullYear());
-      let technologyData = textCreator(projectData.technology, "Technology used were:\n" + projectData.technology);
+      let technologyData = textCreator(projectData.technology, "Technologies used were:\n" + projectData.technology);
       let statusData = textCreator(projectData.status, "Current status of this project: " + projectData.status);
       let websiteData = buttonCreator(projectData.deployedLink, "Website link");
       img.src = projectData.readme_picture;
