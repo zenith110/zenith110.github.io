@@ -1,5 +1,5 @@
 .nav-bar{
-    background-color: cornflowerblue;
+    background-color: #F2F2F2;
     overflow: hidden;
 }
 .nav-bar a{
@@ -14,6 +14,9 @@ body {
     text-align: center;
     background:honeydew;
 }
+a {
+    color: black;
+}
 .projects-style{
     text-align: center;
 }
@@ -21,7 +24,7 @@ button {
     text-align: center;
 }
 .footer{
-    background-color:cornflowerblue;
+    background-color: #F2F2F2;
     overflow: hidden;
 }
 

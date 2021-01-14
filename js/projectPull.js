@@ -26,7 +26,7 @@ Given an element and text, create a button and return that button to be appended
 */
 function buttonCreator(link, text){
   var button = document.createElement("button");
-  button.className = "mui-btn mui-btn--raised mui-btn--primary";
+  button.className = "mui-btn mui-btn--raised";
   if(link != "None"){
     var linkText = document.createElement("a");
     linkText.setAttribute("href", link);
